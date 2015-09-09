@@ -13,14 +13,19 @@ var palindrome = function(input) {
     return true;
 };
 
-// $(document).ready(function() {
-//     $("form#factorial").submit(function(event) {
-//         var number = parseInt($("input#number").val());
-//         var result = factorial(number);
-//
-//         $(".output").text(result);
-//
-//         $("#result").show();
-//         event.preventDefault();
-//     });
-// });
+$(document).ready(function() {
+  $("form#palindrome").submit(function(event) {
+    var input = $("input#input").val();
+    var result = palindrome(input);
+
+    $(".input").text(input);
+    if (!result) {
+      $(".not").text("not");
+    } else {
+        $(".not").empty();
+    }
+
+    $("#result").show();
+    event.preventDefault();
+  });
+});
